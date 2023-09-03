@@ -1,0 +1,47 @@
+
+@keyframes load {
+    0%{
+        rotate: 10turn;
+        
+    }
+    50%{
+        border-inline-color: red;
+    }
+    100%{
+        border-inline-color: var(--secondary-color);
+    }
+}
+
+:root {
+    --primary-color: rgb(255, 87, 199);
+    --secondary-color: rgb(233, 5, 172);
+    --terciary-color: rgb(111, 0, 124);
+    --quartenary-color: rgb(3, 255, 213);
+    --primary-font: "Roboto Slab", serif;
+    --secondary-font: "Poppins";
+    --terciary-font: "Pacifico", cursive;
+    --quartenary-font: 'Ubuntu', sans-serif;
+    --logo-animation: logo-animation;
+    --cart-animation1: cart-animation1;
+    --cart-animation2: cart-animation2;
+    --fav-animation: fav-animation;
+    --arrow-animation: arrow-animation;
+    --load-animation: load;
+}
+
+.load-div[load]{
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.load{
+    border: solid 10px var(--secondary-color
+    );
+    /* box-shadow: 15px -15px 30px 5px var(--quartenary-color); */
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border-block: solid 10px transparent;
+    animation: infinite cubic-bezier(0.785, 0.235, 0.200, 0.860) var(--load-animation) 8s;
+}

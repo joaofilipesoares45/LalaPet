@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/editar.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">Lala pet</a>
+    </header>
+    <form action="">
+        <div class="div-form">
+            <input type="file" class="input-file">
+            <img src="" alt="" class="img">
+            <input type="text" class="input-title" placeholder="titulo">
+            <input type="text" class="input-price" placeholder="preço">
+            <input type="text" class="input-obs" placeholder="Informação adicional">
+            <button class="adic-btn">Confirmar</button>
+        </div>
+    </form>
+    <main>
+        <section>
+            <div class="exb-div">
+
+            </div>
+        </section>
+    </main>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAUHio_UHs8lAC1QfPlzRKbRmhfqLz2HyU",
+            authDomain: "lala-pet-api.firebaseapp.com",
+            projectId: "lala-pet-api",
+            storageBucket: "lala-pet-api.appspot.com",
+            messagingSenderId: "280296470391",
+            appId: "1:280296470391:web:64566347b1499640d15372"
+        };
+        const login = document.querySelector('.login')
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const provider = new firebase.auth.GoogleAuthProvider()
+        const db = firebase.firestore();
+
+        // login.addEventListener('click', (e) => {
+        //     auth.signInWithPopup(provider)
+        // }, 100)
+        // auth.onAuthStateChanged((val) => {
+        //     if (val) {
+        //         // console.log(val);
+        //     }
+        // })
+        const listaProdutos = []
+        db.collection('produtos').onSnapshot((data) => {
+            data.docs.map((val) => {
+                listaProdutos.push(val.data().produto)
+            })
+            localStorage.Data = JSON.stringify(listaProdutos)
+        })
+    </script>
+
+    <script src="js/databaseMod.js" defer></script>
+</body>
+
+</html>

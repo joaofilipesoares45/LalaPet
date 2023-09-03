@@ -1,0 +1,145 @@
+:root {
+    --primary-color: rgb(255, 110, 207);
+    --secondary-color: rgb(233, 5, 172);
+    --terciary-color: rgb(111, 0, 124);
+    --quartenary-color: rgb(3, 255, 213);
+    --primary-font: "Roboto Slab", serif;
+    --secondary-font: "Poppins";
+    --terciary-font: "Pacifico", cursive;
+    --quartenary-font: 'Ubuntu', sans-serif;
+    --logo-animation: logo-animation;
+}
+
+.cart[none]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    color: var(--terciary-color);
+}
+.nada-aqui a{
+    margin: 20px;
+}
+.cart{
+    position: absolute;
+    top: 18%;
+    right: 0px;
+    width: 40%;
+    height: 0px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.954);
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    z-index: 1;
+    
+}
+.cart[active]{
+    height: 435px;
+    border: solid 1px rgb(186, 186, 186);
+    border-radius: 0px 0px 20px 20px;
+    transition: .5s;
+}
+.cart h3 {
+    margin-top: 10px;
+    color: var(--terciary-color);
+    font-family: var(--quartenary-font);
+}
+.cart-roll{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    margin-bottom: 0px;
+    transition: .5s;
+    
+}
+
+.cart-body{
+    display: flex;
+    flex-direction: column;
+    border: solid 3px var(--secondary-color);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transform: scale(1.01);
+    overflow: hidden;
+}
+
+.cart-body:hover{
+    border: solid 3px var(--primary-color);
+    box-shadow: 4px 5px 5px 0px rgba(237, 47, 186, 0.14);
+}
+
+.cart-body:hover button{
+    transform: translate(-5px);
+}
+.cart-body div:first-child{
+    display: flex;
+    padding: 10px;
+}
+.cart-img{
+    width: 120px;
+    height: 150px;
+    margin-right: 20px;
+}
+
+.cart h4{
+    color: var(--terciary-color);
+    font-size: medium;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-family: var(--quartenary-font);
+}
+
+.cart p{
+    font-size: small;
+}
+.cart p:last-child{
+    font-size: 20px;
+    color: rgb(0, 116, 12);
+    font-family: var(--quartenary-font);
+}
+.cart-remover-btn{
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    border: none;
+    transition: .2s;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    transform: translate(300px);
+}
+.cart-remover-btn:hover{
+    background-color: red;
+    color: white;
+}
+.sacola-btn{
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: white;
+}
+.sacola-btn:hover{
+    background-color: rgb(0, 178, 0);
+    color: white;
+}
+@media (max-width: 800px){
+    .cart{
+        width: 60%;
+        top: 18%;
+    }
+}
+@media (max-width: 650px){
+    .cart{
+        top: 25%;
+        width: 100%;
+    }
+}

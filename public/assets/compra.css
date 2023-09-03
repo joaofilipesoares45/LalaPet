@@ -1,0 +1,510 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+@keyframes logo-animation {
+    0% {
+        transform: rotate(0deg);
+        transition: 0.5s;
+    }
+
+    50% {
+        transform: rotate(15deg);
+
+    }
+
+    100% {
+        transform: rotate(-15deg);
+    }
+
+}
+
+@keyframes input-animation {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 400px;
+        border-bottom: solid 2px rgb(0, 157, 0);
+    }
+}
+
+:root {
+    --primary-color: rgb(255, 110, 207);
+    --secondary-color: rgb(233, 5, 172);
+    --terciary-color: rgb(111, 0, 124);
+    --quartenary-color: rgb(3, 255, 213);
+    --primary-font: "Roboto Slab", serif;
+    --secondary-font: "Poppins";
+    --terciary-font: "Pacifico", cursive;
+    --logo-animation: logo-animation;
+    --input-animation: input-animation
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: var(--primary-font);
+}
+
+.buy-section {
+    width: 100%;
+}
+
+header h4 {
+    font-family: var(--secondary-font);
+    background-color: rgb(132, 15, 15);
+    color: white;
+    text-align: center;
+    padding: 2px;
+}
+
+.buy-nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--secondary-color);
+    border-bottom: solid 2px var(--terciary-color);
+    padding: 2px;
+    margin-top: 0px;
+}
+
+.buy-nav hr {
+    border: solid 2px white;
+    border-radius: 20px;
+}
+
+.buy-nav div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 26%;
+    padding: 10px;
+    border: solid 2px rgba(255, 255, 255, 0);
+    border-radius: 20px;
+}
+
+.buy-nav div[active] {
+    background-color: white;
+    transition: .5s;
+}
+
+.buy-nav div label {
+    font-family: var(--secondary-font);
+    color: white;
+}
+
+.nav-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: white;
+}
+
+.buy-nav div:hover {
+    border-color: white;
+    transition: .3s;
+}
+
+.buy-nav div[active] label {
+    color: var(--terciary-color);
+    transition: .05s;
+}
+
+.buy-nav div[active] button {
+    background-color: var(--terciary-color);
+    transition: .05s;
+}
+
+.modal-response {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.299);
+    visibility: hidden;
+
+}
+
+.modal-response div {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 5px 10px 10px rgb(190, 190, 190);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-h3 {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.modal-p {
+    margin-bottom: 20px;
+
+}
+
+.modal-btn {
+    width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: medium;
+}
+
+.res-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 95%;
+    margin: 20px;
+    margin-top: 10px;
+}
+
+.res-roll h2 {
+    font-family: var(--secondary-font);
+    margin-bottom: 10px;
+}
+
+.res-card {
+    display: flex;
+    padding: 5px;
+    border: solid .1px rgb(211, 211, 211);
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.res-card:hover {
+    border: solid .1px rgb(129, 129, 129);
+}
+
+.res-card img {
+    width: 120px;
+    margin-right: 10px;
+}
+
+.res-card hr {
+    border-color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.card-floor {
+    margin-top: 15px;
+    display: flex;
+    width: 100%;
+}
+
+.card-floor hr {
+    visibility: hidden;
+}
+
+.card-obs {
+    width: 100%;
+}
+
+.card-obs h4 {
+    color: var(--terciary-color);
+    font-size: 18px;
+}
+
+.card-obs p {
+    font-size: small;
+}
+
+.price {
+    width: 20%;
+    margin-left: 10px;
+    font-size: large;
+    color: rgb(0, 106, 0);
+}
+
+.total-price {
+    text-align: end;
+    margin-top: 5px;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+}
+
+.adr-form form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 100px;
+}
+
+.adr-form form hr {
+    width: 400px;
+    border: solid 2px gray;
+    margin-bottom: 20px;
+}
+
+.adr-form h2 {
+    margin-bottom: 5px;
+    width: 410px;
+    font-family: var(--secondary-font);
+    font-size: 22px;
+}
+
+.adr-input {
+    width: 400px;
+    padding: 5px 0px 0px 0px;
+    margin-bottom: 10px;
+    outline: 1px gray;
+    border: none;
+    border-bottom: solid 2px gray;
+    font-size: medium;
+    font-family: var(--secondary-font);
+    font-size: 18px;
+}
+
+.adr-input[active] {
+    background-color: rgba(0, 255, 0, 0.171);
+    border-bottom: solid 2px rgb(0, 157, 0);
+}
+
+.adr-input[active]:hover {
+    background-color: rgba(0, 255, 0, 0.171);
+    border-bottom: solid 2px rgb(0, 157, 0);
+}
+
+.adr-input:hover {
+    background-color: rgba(255, 0, 0, 0.171);
+    border-bottom: solid 2px rgb(157, 0, 0);
+}
+
+.adr-input:focus {
+    overflow: visible;
+    animation: var(--input-animation) .5s;
+    border-bottom: solid 2px rgb(0, 157, 0);
+}
+
+.adr-btn {
+    width: 400px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.pay-form {
+    margin-left: 200px;
+    margin-top: 20px;
+    width: 90%;
+}
+
+.pay-form h2 {
+    margin-bottom: 20px;
+    font-family: var(--secondary-font);
+}
+
+.pay-methods {
+    width: 100%;
+}
+
+.pay-methods h4 {
+    pointer-events: none;
+    margin-bottom: 10px;
+    color: var(--terciary-color);
+}
+
+.pay-methods div {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: solid 1px gray;
+    padding: 5px;
+    margin-top: 5px;
+    height: 25px;
+    transition: .5s;
+    width: 550px;
+    scale: 1;
+
+}
+
+.pay-methods div:hover {
+    transition: .5s;
+}
+
+.pay-methods label {
+    font-size: small;
+    margin-bottom: -5px;
+    color: gray;
+}
+
+.pay-methods input {
+    font-family: var(--secondary-font);
+    width: 97%;
+    padding: 10px 5px 0px 2px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+    border: none;
+    border-bottom: solid 2px gray;
+    font-size: medium;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.pay-methods input[notvalid] {
+    background-color: rgba(255, 0, 0, 0.158);
+}
+
+.pay-methods input::placeholder {
+    color: rgb(192, 192, 192);
+}
+
+.pay-methods input:hover {
+    border-bottom: solid 2px rgb(64, 64, 64);
+    transition: .5s;
+}
+
+.pay-methods input:hover::placeholder {
+    color: rgb(0, 0, 0);
+    transition: .2s;
+}
+
+.pay-card button {
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(20, 221, 20);
+    color: white;
+    border: none;
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    visibility: hidden;
+}
+
+.pay-pix h5 {
+    width: 56%;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.pay-pix div {
+    width: 98%;
+    height: 500px;
+    word-wrap: break-word;
+    margin-bottom: 20px
+}
+
+.pay-pix button {
+    width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(20, 221, 20);
+    color: white;
+    border: none;
+}
+
+
+@media (max-width: 600px) {
+    .res-div {
+        margin-left: 0px;
+    }
+
+    .res-card {
+        width: 100%;
+    }
+
+    .card-floor {
+        margin-top: 0px;
+        flex-direction: column;
+    }
+
+    .card-floor hr {
+        visibility: visible;
+    }
+
+    .card-obs {
+        height: 70%;
+    }
+
+    .card-obs h4 {
+        font-size: 15px;
+    }
+
+    .card-obs p {
+        font-size: 12px;
+    }
+
+    .price {
+        width: 50%;
+        font-size: 15px;
+        margin-top: 10px;
+        margin-left: 0px;
+        display: flex;
+    }
+
+    .total-price {
+        margin-left: 10px;
+        border-bottom: solid 2px var(--secondary-color);font-size: 20px;
+    }
+
+    .adr-form form {
+        margin-left: 0px;
+    }
+
+    .adr-input,
+    .adr-btn,
+    .adr-form h2,
+    .adr-form form hr {
+        width: 98%;
+    }
+
+    .pay-methods {
+        margin-left: 0px;
+    }
+
+    .pay-form {
+        margin-left: 0px;
+    }
+
+    .pay-methods div {
+        width: 90%;
+    }
+
+    .pay-methods input {
+        width: 95%;
+    }
+
+    .pay-pix div {
+        width: 95%;
+        overflow: auto;
+        word-wrap: break-word;
+        margin-bottom: 20px
+    }
+
+}
+
+@media (max-width: 800px) {
+    .res-roll {
+        margin-left: 10px;
+    }
+
+    .res-card {
+        width: 100%;
+    }
+
+    .total-price {
+        margin-left: 10px;
+    }
+
+    .pay-form {
+        margin-left: 10%;
+    }
+}

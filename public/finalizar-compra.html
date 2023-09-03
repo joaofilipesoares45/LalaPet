@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar compra</title>
+    <link rel="stylesheet" href="assets/compra.css">
+</head>
+
+<body>
+
+    <section class="buy-section">
+
+        <header>
+            <div>
+                <h4>Siga os passos para concluir seu pedido</h4>
+            </div>
+            <nav class="buy-nav">
+
+                <div index="1">
+                    <label for="nav-btn1">Resumo</label>
+                    <button id="nav-btn1" class="nav-btn"></button>
+                </div>
+                <hr>
+                <div index="2">
+                    <label for="nav-btn2">Endereço</label>
+                    <button id="nav-btn2" class="nav-btn"></button>
+                </div>
+                <!-- <hr> -->
+                <div index="3" style="display: none;">
+                    <label for="nav-btn3">Pagamento</label>
+                    <button id="nav-btn3" class="nav-btn"></button>
+                </div>
+            </nav>
+
+        </header>
+        <div class="data-buy" >
+
+            <div class="res-div" index="1" active>
+                <div class="res-roll">
+                    <h2>Resumo da compra</h2>
+                </div>
+                <h3 class="total-price"></h3>
+            </div>
+
+            <div class="adr-form" index='2'>
+                <form>
+                    <h2>Preencha os campos a seguir para confirmar o endereço de entrega</h2>
+
+                    <hr>
+
+                    <label for="input-cep">Cep</label>
+                    <input type="text" id="input-cep" class="adr-input" placeholder="Cep">
+
+                    <label for="input-street">Rua</label>
+                    <input type="text" id="input-street" class="adr-input" placeholder="Rua">
+
+                    <label for="input-number">Número</label>
+                    <input type="text" id="input-number" class="adr-input" placeholder="Número da Residência">
+
+                    <label for="input-compl">Complemento</label>
+                    <input type="text" id="input-compl" class="adr-input" placeholder="Complemento">
+
+                    <label for="input-bairro">Bairro</label>
+                    <input type="text" id="input-bairro" class="adr-input" placeholder="Bairro">
+
+                    <label for="input-city">Cidade</label>
+                    <input type="text" id="input-city" class="adr-input" placeholder="Cidade">
+
+                    <label for="input-uf">Estado</label>
+                    <input type="text" id="input-uf" class="adr-input" placeholder="Estado">
+
+                    <button class="adr-btn">Confirmar</button>
+                </form>
+            </div>
+
+            <div class="pay-form" index="3" style="visibility: hidden;">
+
+                <h2>Formas de pagamento</h2>
+
+                <div class="pay-methods">
+                    <div class="pay-card">
+                        <h4>Pagar com cartão de crédito</h4>
+
+                        <label for="input-card-number">Número do cartão</label>
+                        <input type="text" id="input-card-number" placeholder="Número do cartão"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                            maxlength="16">
+
+                        <label for="input-card-name">Nome do cartão</label>
+                        <input type="text" id="input-card-name" placeholder="Nome do cartão">
+
+                        <label for="input-val-card">Validade</label>
+                        <input type="text" id="input-val-card" placeholder="Validade"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                            maxlength="4">
+
+                        <label for="input-cvc-card">CVC</label>
+                        <input type="text" id="input-cvc-card" placeholder="CVC"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+                            maxlength="3">
+
+                        <h4></h4>
+                        <button class="btn-pay-card">Confirmar</button>
+
+                    </div>
+                    <div class="pay-pix">
+                        <h4>Pagar com pix</h4>
+
+                        <h5>Copie o codigo abaixo e efetue o pagamento, o codigo valido apenas por 12 horas</h5>
+
+                        <div>
+                            <p class="pay-code">
+                                2349284sdfadfgadfgasdfassadfrewertt34534534514512349832asdfgasdfasdfasfqerfasdfasdfasdfasdfadsfadsfgadfgasdgferfaegadfgadfgeargaeg4
+                            </p>
+                        </div>
+
+                        <button class="copy-code">Copiar</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-response">
+            <div>
+
+                <h3 class="modal-h3"></h3>
+
+                <p class="modal-p"></p>
+                
+                <button class="modal-btn">Ok</button>
+
+            </div>
+        </div>
+
+    </section>
+    <script src="js/finalizar-compra.js" defer></script>
+</body>
+
+</html>
